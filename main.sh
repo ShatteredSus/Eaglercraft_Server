@@ -1,8 +1,11 @@
 #!/bin/bash
 
+sudo apt install tmux --fix-missing # this pretty much only applies to gitpod
+
+
 # ~~~ EaglercraftX Server
 # ~~~ >> smashed together once again by ayunami2000
-# ~~~ >> uwu
+# ~~~ >> modified by WinRAR
 
 unset DISPLAY
 
@@ -26,9 +29,6 @@ if [ ! -d "eaglercraftx" ]; then
   FORCE1="bruh"
 fi
 
-# ~~~
-# BY MODIFYING THE BELOW TEXT, YOU ARE BEING A PRICK
-# ~~~
 if ! grep -q "eula=true" "eula.txt"; then
   rm eula.txt
   java -jar LicensePrompt.jar
@@ -73,7 +73,7 @@ REMOTEHASH=$(git rev-parse @{u})
 if [ "$LOCALHASH" != "$REMOTEHASH" ] || [ $FORCE1 == "bruh" ]; then
   cd ..
   rm -rf eaglercraftx
-  git clone  eaglercraftx --depth 1
+  git clone https://github.com/WINRARisyou/EaglercraftX eaglercraftx --depth 1
   mkdir eaglercraftx
   cd eaglercraftx
 fi
