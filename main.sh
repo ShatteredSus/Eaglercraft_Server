@@ -29,15 +29,15 @@ fi
 # ~~~
 # BY MODIFYING THE BELOW TEXT, YOU ARE BEING A PRICK
 # ~~~
-if ! grep -q "^eula=$REPL_OWNER/$REPL_SLUG\$" "eula.txt"; then
+if ! grep -q "eula=true" "eula.txt"; then
   rm eula.txt
   java -jar LicensePrompt.jar
-  echo "eula=$REPL_OWNER/$REPL_SLUG" > eula.txt
+  echo "eula=true" > eula.txt
 fi
 # ~~~
 
 # reset stuff
-if [ -f "base.repl" ] && ! { [ "$REPL_OWNER" == "ayunami2000" ] && [ "$REPL_SLUG" == "eaglercraftx" ]; }; then
+if grep -q "reset=true" "reset.txt"; then
   rm base.repl
   rm -rf server/world
   rm -rf server/world_nether
@@ -73,7 +73,7 @@ REMOTEHASH=$(git rev-parse @{u})
 if [ "$LOCALHASH" != "$REMOTEHASH" ] || [ $FORCE1 == "bruh" ]; then
   cd ..
   rm -rf eaglercraftx
-  git clone https://gitlab.com/lax1dude/eaglercraftx-1.8 eaglercraftx --depth 1
+  git clone  eaglercraftx --depth 1
   mkdir eaglercraftx
   cd eaglercraftx
 fi
