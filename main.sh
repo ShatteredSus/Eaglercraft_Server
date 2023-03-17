@@ -1,8 +1,4 @@
 #!/bin/bash
-
-sudo apt install tmux --fix-missing # this pretty much only applies to gitpod
-
-
 # ~~~ EaglercraftX Server
 # ~~~ >> smashed together once again by ayunami2000
 # ~~~ >> modified by WinRAR
