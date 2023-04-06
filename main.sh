@@ -143,3 +143,5 @@ while tmux has-session -t server
 do
   tmux a -t server
 done
+
+echo 'you might need to agree to the EULA in the server folder'
