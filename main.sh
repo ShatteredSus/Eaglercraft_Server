@@ -69,7 +69,7 @@ REMOTEHASH=$(git rev-parse @{u})
 if [ "$LOCALHASH" != "$REMOTEHASH" ] || [ $FORCE1 == "bruh" ]; then
   cd ..
   rm -rf eaglercraftx
-  git clone https://github.com/WINRARisyou/EaglercraftX eaglercraftx --depth 1
+  git clone https://github.com/WINRARisyou/Eaglercraftx-u18 eaglercraftx --depth 1
   mkdir eaglercraftx
   cd eaglercraftx
 fi
@@ -106,6 +106,7 @@ if [ -f "client_version" ] && [ -f "gateway_version" ]; then
     cp gateway_version ../gateway_version
     if [ -f "gateway/EaglercraftXBungee/EaglerXBungee-Latest.jar" ]; then
       rm ../bungee/plugins/EaglercraftXBungee.jar
+      rm -rf ../bungee/plugins/EaglercraftXBungee
       cp gateway/EaglercraftXBungee/EaglerXBungee-Latest.jar ../bungee/plugins/EaglercraftXBungee.jar
     fi
   fi
